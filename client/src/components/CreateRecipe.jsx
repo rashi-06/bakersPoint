@@ -2,11 +2,15 @@ import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import {useCookies} from 'react-cookie';
+import { useGetUserID } from '../hooks/useGetUserID';
 
 const CreateRecipe = () => {
 
+  const userID = useGetUserID();
+
   const navigate = useNavigate();
-  const {cookies , setCookies} = useCookies(["access_token"])
+  // const {cookies , setCookies} = useCookies(["access_token"])
+  const [cookies, _] = useCookies(["access_token"]);
 
 
   const [recipe, setRecipe] = useState({
@@ -16,7 +20,7 @@ const CreateRecipe = () => {
     instructions: "",
     imageUrl: "",
     cookingTime: 0,
-    // userOwner: userID,
+    userOwner: userID,
   });
 
   const handleChange = (e)=>{
@@ -26,24 +30,31 @@ const CreateRecipe = () => {
 
   const handleIngredientChange = (e , ind)=>{
     const {value} = e.target;
-    const ingredients  = recipe.ingredients;
+    const ingredients  = [...recipe.ingredients];
     ingredients[ind] = value;
     setRecipe({...recipe , ingredients : [ingredients]})
   }
 
-  const addIngredient = (e) =>{
-      setRecipe({...recipe,  ingredients : [...recipe.ingredients , ""]});
+  
+
+  const handleAddIngredient = (e) =>{
+    const ingredients = [...recipe.ingredients, ""];
+    setRecipe({ ...recipe, ingredients });
   }
 
 
   const handleSubmit = async(event) =>{
       event.preventDefault();
       try{
-        await axios.post("http://localhost:2000/recipes/createRecipe",
+        await axios.post("http://localhost:2000/recipes",
         {...recipe},
         {
-          headers : {authorization : cookies.access_token}
+          // headers : {authorization : cookies.access_token}
+          headers: { authorization: cookies.access_token },
+
         });
+        
+        console.log(recipe);
         alert("New Recipe Created!");
         navigate("/");
       }catch(err){
@@ -70,21 +81,22 @@ const CreateRecipe = () => {
         <div className='inner-login'>
           <label htmlFor="ingredients">Ingredients</label>
           {recipe.ingredients.map((ingredient, index) => (
-            <input
-              key={index}
-              type="text"
-              name="ingredients"
-              value={ingredient}
-              onChange={(event) => handleIngredientChange(event, index)}
-            />
-          ))}
-          
-          <button type="button" onClick={addIngredient}>Add Ingredient</button>
+           <input
+           key={index}
+           type="text"
+           name="ingredients"
+           value={ingredient}
+           onChange={(event) => handleIngredientChange(event, index)}
+         />
+       ))}
+       <button type="button" onClick={handleAddIngredient}>
+         Add Ingredient
+       </button>
         </div>
 
         <div className='inner-login'>
           <label>Instructions : </label>
-          <input type="text" name='instructions' value={recipe.instructions} onChange={handleChange}/>
+          <textarea  name='instructions' value={recipe.instructions} onChange={handleChange}/>
         </div>
 
         <div className='inner-login'>
@@ -94,7 +106,7 @@ const CreateRecipe = () => {
 
         <div className='inner-login'>
           <label>Cooking Time : </label>
-          <input type="time" name='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
+          <input type="number" name='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
          <button type='submit'>Submit</button>   

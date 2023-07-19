@@ -18,10 +18,11 @@ router.get("/" , async(req,res)=>{
 })
 
 
-router.post("/createRecipe", async(req ,res) =>{
-    const newRecipe = req.body;
+router.post("/", async(req ,res) =>{
+    const newRecipe =  new RecipeModel(req.body);
     try{
         const respo = await newRecipe.save();
+        console.log(res);
         res.json(respo);
     }catch(err){
         res.json(err);
