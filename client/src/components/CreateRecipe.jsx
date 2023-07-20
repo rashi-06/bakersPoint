@@ -32,7 +32,7 @@ const CreateRecipe = () => {
     const {value} = e.target;
     const ingredients  = [...recipe.ingredients];
     ingredients[ind] = value;
-    setRecipe({...recipe , ingredients : [ingredients]})
+    setRecipe({...recipe , ingredients})
   }
 
   
