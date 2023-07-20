@@ -49,7 +49,6 @@ const CreateRecipe = () => {
         await axios.post("http://localhost:2000/recipes",
         {...recipe},
         {
-          // headers : {authorization : cookies.access_token}
           headers: { authorization: cookies.access_token },
 
         });
