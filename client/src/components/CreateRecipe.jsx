@@ -63,27 +63,28 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div>
+    <div className='container'>
       <h2>Create Form</h2>
 
-      <form className='login-form' onSubmit={handleSubmit}>
-        <div className='inner-login'>
+      <form className='create-form' onSubmit={handleSubmit}>
+        <div className='inner-create'>
           <label>Name : </label>
-          <input type="text" name='name' value={recipe.name} onChange={handleChange} />
+          <input type="text" name='name' id="name" value={recipe.name} onChange={handleChange} />
         </div>
 
-        <div className='inner-login'>
+        <div className='inner-create'>
           <label>Description : </label>
-          <textarea type="text" name='description' value={recipe.description} onChange={handleChange}/>
+          <textarea type="text" name='description' id='description' value={recipe.description} onChange={handleChange}/>
         </div>
 
-        <div className='inner-login'>
+        <div className='inner-create'>
           <label htmlFor="ingredients">Ingredients</label>
           {recipe.ingredients.map((ingredient, index) => (
            <input
            key={index}
            type="text"
            name="ingredients"
+           id="ingredients"
            value={ingredient}
            onChange={(event) => handleIngredientChange(event, index)}
          />
@@ -93,19 +94,19 @@ const CreateRecipe = () => {
        </button>
         </div>
 
-        <div className='inner-login'>
+        <div className='inner-create'>
           <label>Instructions : </label>
           <textarea  name='instructions' value={recipe.instructions} onChange={handleChange}/>
         </div>
 
-        <div className='inner-login'>
+        <div className='inner-create'>
           <label>Image URL : </label>
           <input type="text" name='imageUrl' value={recipe.imageUrl} onChange={handleChange}/>
         </div>
 
-        <div className='inner-login'>
+        <div className='inner-create'>
           <label>Cooking Time : </label>
-          <input type="number" name='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
+          <input type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
          <button type='submit'>Submit</button>   
