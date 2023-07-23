@@ -23,7 +23,7 @@ const SavedRecipes = () => {
   
 
   return (
-    <div>
+    <div >
       <h1>Saved Recipes</h1>
   
       <ul>
