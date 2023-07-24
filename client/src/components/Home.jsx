@@ -60,9 +60,9 @@ const Home = () => {
   return (
     <div>
        <h1>Recipes</h1>
-      <ul>
+      <ul className='list_items'>
         {recipes.map((recipe) => (
-          <li key={recipe._id}>
+          <li className='list_ele' key={recipe._id}>
             <div>
               <h2>{recipe.name}</h2>
               <button
