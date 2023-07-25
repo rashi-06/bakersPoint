@@ -96,20 +96,22 @@ label{
 }
 
 
-/* .create-form{
+.create-form{
   border: 2px solid black;
   padding: 150px 0px;
   margin: 50px 550px;
 } */
 
-/* .inner-create{
-  margin: 20px 5px;
+ .inner-create{
+  margin: 120px 5px;
+  padding: 120px 20px;
   font-size: larger;
   font-weight: 100;
   list-style: none;
   border: 2px solid black;
 }
-  /* padding: 2px 5px; */
+
+
 
 
 
@@ -122,8 +124,8 @@ label{
   border-radius: 4px;
 } */
 
-h1 {
-  text-align: center;
+/* /h1 { */
+  /* text-align: center;
 }
 
 label {
@@ -143,7 +145,7 @@ input[type="number"] {
 
 textarea {
   height: 100px;
-}
+} */
 
 /* button {
   display: block;
