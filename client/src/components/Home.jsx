@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios";
 import {useGetUserID} from "../hooks/useGetUserID"
+import "../css/home.css"
 
 
 const Home = () => {
@@ -24,12 +25,12 @@ const Home = () => {
     }
 
     const fetchAllSavedRecipes = async() =>{
-      // try {
-      //   const res = await axios.get(`http://localhost:2000/recipes/savedRecipes/ids/${userID}`)
-      //   setSavedRecipes(res.data.savedRecipes);
-      // } catch (error) {
-      //   console.log(error);
-      // }
+      try {
+        const res = await axios.get(`http://localhost:2000/recipes/savedRecipes/ids/${userID}`)
+        setSavedRecipes(res.data.savedRecipes);
+      } catch (error) {
+        console.log(error);
+      }
     };
     
     fetchRecipes();
@@ -58,12 +59,12 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='container'>
        <h1>Recipes</h1>
       <ul className='list_items'>
-        {recipes.map((recipe) => (
+        {recipes.reverse().map((recipe) => (
           <li className='list_ele' key={recipe._id}>
-            <div>
+            <div >
               <h2>{recipe.name}</h2>
               <button
                 onClick={() => saveRecipe(recipe._id)}
@@ -72,6 +73,19 @@ const Home = () => {
                 {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
               </button>
             </div>
+            {/* {recipe.instructions.map((r)=>(
+              <ul>
+                <li>{r.instructions}</li>
+              </ul>
+            ))}   */}
+            <div>
+              <ul>
+              {recipe.ingredients.map((element) =>
+                <li>{element}</li>
+              )}
+              </ul>
+            </div>
+            
             <div className="instructions">
               <p>{recipe.instructions}</p>
             </div>

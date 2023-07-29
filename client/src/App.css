@@ -162,13 +162,13 @@ button:hover {
   background-color: #45a049;
 } */
 
-.list_items{
+/* .list_items{
   list-style: none;
   /* border: 2px solid black; */
-}
+/* } */
 
-.list_items li{
+/* .list_items li{ */
   border: 2px solid black;
   margin: 90px 300px;
   padding: 20px 150px;
-}
+/* } */

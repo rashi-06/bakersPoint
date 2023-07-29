@@ -1,0 +1,26 @@
+.container{
+    width: 100vw;
+}
+
+ul{
+    list-style: none;
+    display: inline-block;
+    width: 30%;
+    border: 2px solid black;
+}
+
+.list-ele{
+    display: inline-block;
+    width: 200px;
+    list-style: none;
+    display: inline-block;
+  font-size: 20px;
+  padding: 20px;
+   
+}
+
+img{
+    display: inline-block;
+    width: 50%;
+    
+}
