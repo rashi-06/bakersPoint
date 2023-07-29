@@ -24,12 +24,12 @@ const Home = () => {
     }
 
     const fetchAllSavedRecipes = async() =>{
-      try {
-        const res = await axios.get(`http://localhost:2000/recipes/savedRecipes/ids/${userID}`)
-        setSavedRecipes(res.data.savedRecipes);
-      } catch (error) {
-        console.log(error);
-      }
+      // try {
+      //   const res = await axios.get(`http://localhost:2000/recipes/savedRecipes/ids/${userID}`)
+      //   setSavedRecipes(res.data.savedRecipes);
+      // } catch (error) {
+      //   console.log(error);
+      // }
     };
     
     fetchRecipes();

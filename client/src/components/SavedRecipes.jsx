@@ -12,7 +12,8 @@ const SavedRecipes = () => {
       try {
         const res = await axios.get(`http://localhost:2000/recipes/savedRecipes/${userID}`)
         console.log(res.data.savedRecipes);
-        setSavedRecipes(res.data.savedRecipes);
+        // setSavedRecipes(res.data.savedRecipes)
+        {res.length > 0 ? setSavedRecipes(res.data.savedRecipes): setSavedRecipes(["No saved receipe"])};
       } catch (error) {
         console.log(error);
       }
