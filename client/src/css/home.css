@@ -1,26 +1,37 @@
 .container{
     width: 100vw;
+    display: flex;
+    /* flex-wrap:wrap-reverse; */
+    flex-wrap: wrap;
+    
+    margin: auto;
+
 }
 
 ul{
-    list-style: none;
-    display: inline-block;
     width: 30%;
+    list-style: none;
+    /* display: inline-block; */
     border: 2px solid black;
 }
 
 .list-ele{
-    display: inline-block;
-    width: 200px;
+    /* display: inline-block; */
+    /* width: 200px; */
     list-style: none;
-    display: inline-block;
-  font-size: 20px;
-  padding: 20px;
+    /* display: inline-block; */
+    font-size: 20px;
+    padding: 20px;
+    border: 2px solid black;
    
 }
 
+
+li{
+    border: 2px solid blue;
+}
 img{
     display: inline-block;
     width: 50%;
-    
+
 }
