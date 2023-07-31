@@ -81,7 +81,7 @@ const Home = () => {
             <div>
               <ul>
               {recipe.ingredients.map((element) =>
-                <li>{element}</li>
+                <li className='all-recipes'>{element}</li>
               )}
               </ul>
             </div>
