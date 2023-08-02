@@ -25,7 +25,7 @@ ul{
 
 .list-ele{
     /* display: inline-block; */
-    /* width: 200px;/ */
+    /* width: 200px;/  */
     list-style: none;
     /* display: inline-block; */
     font-size: 20px;
@@ -37,7 +37,7 @@ ul{
 
 ul{
     display: flex;
-    /* width: 30%; */
+    width: 30%;
     
     flex-wrap: wrap;
 }
