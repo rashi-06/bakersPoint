@@ -37,7 +37,7 @@ ul{
 
 ul{
     display: flex;
-    width: 30%;
+    /* width: 30%; */
     
     flex-wrap: wrap;
 }
