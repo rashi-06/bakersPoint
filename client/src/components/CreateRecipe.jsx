@@ -192,7 +192,7 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div className='w-full bg-blue-200'>
+    <div className='w-full '>
       <h2>Create Form</h2>
 
       <form className='create-form  shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={handleSubmit}>
