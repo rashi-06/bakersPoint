@@ -196,10 +196,10 @@ const CreateRecipe = () => {
       <h2>Create Form</h2>
 
       <form className='create-form  shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={handleSubmit}>
-        <div className='mb-4 w-full'>
+        <div className='flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full"'>
           <label>Name: </label>
           <input
-            className='w-60 h-12 px-5 mx-5 rounded-lg'
+            className='outline-none text-3xl sm:text-4xl font-bold border-b-2 border-gray-200 p-2'
            type="text" name='name' id="name" value={recipe.name} onChange={handleChange} />
         </div>
 
@@ -240,7 +240,7 @@ const CreateRecipe = () => {
         <div className='inner-create'>
           <label>Image URL : </label>
           <input 
-             className='w-60 h-12 px-5 mx-5 my-5 rounded-lg'
+             className='w-60 h-12 px-5 mx-5 my-5 rounded-lg '
           type="text" name='imageUrl' value={recipe.imageUrl} onChange={handleChange}/>
         </div>
 
