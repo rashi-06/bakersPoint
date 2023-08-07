@@ -63,7 +63,7 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div className='w-full h-full flex flex-col  justify-center items-center '>
+    <div className='w-full h-full flex flex-col justify-center items-center bg-red-100'>
       <h1 className='text-3xl'>Create Form</h1>
 
       <form className=' w-full  max-w-sm sm:w-1/2 border-red-400' onSubmit={handleSubmit}>
@@ -71,14 +71,14 @@ const CreateRecipe = () => {
         <div>
           <input
             required
-            className='block w-full rounded-md border-0 py-1.5 h-15 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
+            className='block w-full rounded-md border-0 p-3 text-xl h-15 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
            type="text" name='name' id="name" value={recipe.name} onChange={handleChange} />
         </div>
 
         <div  className='my-4'><label className='m'>Description : </label></div>
         <div>
           <textarea 
-            className='block w-full rounded-md border-0 py-1.5 h-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
+            className='block w-full rounded-md border-0 p-3 text-xl h-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           type="text" name='description' id='description' value={recipe.description} onChange={handleChange}/>
         </div>
 
@@ -88,7 +88,7 @@ const CreateRecipe = () => {
         <div>
           {recipe.ingredients.map((ingredient, index) => (
            <input
-           className='block w-full rounded-md border-0 pb-1.5 h-15 mb-2 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
+           className='block w-full rounded-md border-0 p-3 text-xl h-15 mb-2 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
            key={index}
            type="text"
            name="ingredients"
@@ -109,7 +109,7 @@ const CreateRecipe = () => {
         </div>
         <div>
           <textarea  
-            className='block w-full rounded-md border-0 py-1.5 h-25 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
+            className='block w-full rounded-md border-0 p-3 text-xl h-25 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           name='instructions' value={recipe.instructions} onChange={handleChange}/>
         </div>
 
@@ -118,7 +118,7 @@ const CreateRecipe = () => {
         </div> 
         <div> 
           <input 
-             className='block w-full rounded-md border-0 py-1.5 h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
+             className='block w-full rounded-md border-0 p-3 text-xl h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           type="text" name='imageUrl' value={recipe.imageUrl} onChange={handleChange}/>
         </div>
 
@@ -127,7 +127,7 @@ const CreateRecipe = () => {
         </div>
         <div className='flex justify-center items-center'>
           <input 
-             className='w-10 text-center rounded-md border-0 py-1.5 h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6 my-4'
+             className='w-1/2 text-center rounded-md border-0 p-3 text-xl h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6 my-4'
             type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
