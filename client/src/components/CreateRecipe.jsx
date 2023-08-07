@@ -63,7 +63,7 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div className='w-full flex flex-col  justify-center items-center h-screen'>
+    <div className='w-full h-full flex flex-col  justify-center items-center '>
       <h1 className='text-3xl'>Create Form</h1>
 
       <form className=' w-full  max-w-sm sm:w-1/2 border-red-400' onSubmit={handleSubmit}>
