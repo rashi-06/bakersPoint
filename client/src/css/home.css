@@ -1,46 +1,46 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h2{
+/* h2{
     font-size: 5rem;
-}
+} */
 
-.container{
+/* .container{
     width: 100vw;
-    padding: 20px 120px;
+    padding: 20px 120px; */
     /* display: flex; */
     /* flex-wrap:wrap-reverse; */
     /* flex-wrap: wrap;/ */
     
     /* margin: auto; */
 
-}
+/* } */
 
-ul{
+ /* ul{ */
     /* width: 30%; */
-    list-style: none;
+    /* list-style: none; */
     /* display: inline-block; */
-    border: 2px solid black;
-}
+    /* border: 2px solid black; */
+/* }  */
 
-.list-ele{
+/* .list-ele{/ */
     /* display: inline-block; */
     /* width: 200px;/  */
-    list-style: none;
+    /* list-style: none; */
     /* display: inline-block; */
-    font-size: 20px;
-    padding: 20px;
-    margin: 20px 20px;
+    /* font-size: 20px; */
+    /* padding: 20px; */
+    /* margin: 20px 20px; */
     /* border: 2px solid black; */
    
-}
 
-ul{
+
+/*ul{
     display: flex;
-    /* width: 30%; */
+    /* width: 30%; 
     
     flex-wrap: wrap;
 }
@@ -48,7 +48,7 @@ ul{
 
 .all-recipes{
     width: 30%;
-    /* display: flex; */
+    /* display: flex; 
     border: 2px solid blue;
 
     margin: 20px 25px;
@@ -57,4 +57,4 @@ img{
     display: inline-block;
     width: 50%;
 
-}
+} */

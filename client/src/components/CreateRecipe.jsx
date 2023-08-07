@@ -1,132 +1,3 @@
-// import React, {useState} from 'react'
-// import {useNavigate} from 'react-router-dom';
-// import axios from 'axios';
-// import {useCookies} from 'react-cookie';
-// import { useGetUserID } from '../hooks/useGetUserID';
-// import "../css/home.css"
-
-// const CreateRecipe = () => {
-
-//   const userID = useGetUserID();
-
-//   const navigate = useNavigate();
-//   // const {cookies , setCookies} = useCookies(["access_token"])
-//   const [cookies, _] = useCookies(["access_token"]);
-
-//   // const [richText, setRichText] = useState('');
-
-//   // const handleEditorChange = (content) => {
-//     // setRichText(content);
-//   // };
-
-
-//   const [recipe, setRecipe] = useState({
-//     name: "",
-//     description: "",
-//     ingredients: [],
-//     instructions: "",
-//     imageUrl: "",
-//     cookingTime: 0,
-//     userOwner: userID,
-//   });
-
-//   const handleChange = (e)=>{
-//     const{name , value} = e.target;
-//     setRecipe({...recipe , [name] : value});
-//   }
-
-//   const handleIngredientChange = (e , ind)=>{
-//     const {value} = e.target;
-//     const ingredients  = [...recipe.ingredients];
-//     ingredients[ind] = value;
-//     setRecipe({...recipe , ingredients})
-//   }
-
-  
-
-//   const handleAddIngredient = (e) =>{
-//     const ingredients = [...recipe.ingredients, ""];
-//     setRecipe({ ...recipe, ingredients });
-//   }
-
-
-//   const handleSubmit = async(event) =>{
-//       event.preventDefault();
-//       try{
-//         await axios.post("http://localhost:2000/recipes",
-//         {...recipe},
-//         {
-//           headers: { authorization: cookies.access_token },
-
-//         });
-        
-//         console.log(recipe);
-//         alert("New Recipe Created!");
-//         navigate("/");
-//       }catch(err){
-//         alert(err);
-//         console.log(err);
-//       }
-//   };
-
-//   return (
-//     <div className='container' >
-//       <h2>Create Form</h2>
-
-//       <form className='' onSubmit={handleSubmit}>
-//         <div className='inner-create'>
-//           <label>Name : </label>
-//           <input className='w-64' type="text" name='name' id="name" value={recipe.name} onChange={handleChange} />
-//         </div>
-
-//         <div className='inner-create'>
-//           <label>Description : </label>
-//           <textarea type="text" name='description' id='description' value={recipe.description} onChange={handleChange}/>
-//         </div>
-
-//         <div className='inner-create'>
-//           <label htmlFor="ingredients">Ingredients</label>
-//           {recipe.ingredients.map((ingredient, index) => (
-//            <input
-//            key={index}
-//            type="text"
-//            name="ingredients"
-//            id="ingredients"
-//            value={ingredient}
-//            onChange={(event) => handleIngredientChange(event, index)}
-//          />
-//        ))}
-//        <button type="button" onClick={handleAddIngredient}>
-//          Add Ingredient
-//        </button>
-//         </div>
-
-//         <div className='inner-create'>
-//           <label>Instructions : </label>
-//           <textarea
-//             name='instructions' value={recipe.instructions} onChange={handleChange}/>
-//         </div>  
-          
-
-//         <div className='inner-create'>
-//           <label>Image URL : </label>
-//           <input type="text" name='imageUrl' value={recipe.imageUrl} onChange={handleChange}/>
-//         </div>
-
-//         <div className='inner-create'>
-//           <label>Cooking Time : </label>
-//           <input type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
-//         </div>
-
-//          <button type='submit'>Submit</button>   
-//       </form>
-//     </div>
-//   )
-// }
-
-// export default CreateRecipe
-
-
 import React, {useState} from 'react'
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
@@ -192,29 +63,32 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div className='w-full '>
-      <h2>Create Form</h2>
+    <div className='w-full flex flex-col  justify-center items-center h-screen'>
+      <h1 className='text-3xl'>Create Form</h1>
 
-      <form className='create-form  shadow-md rounded px-8 pt-6 pb-8 mb-4' onSubmit={handleSubmit}>
-        <div className='flex flex-1 flex-col gap-6 lg:pl-5 mt-5 w-full"'>
-          <label>Name: </label>
+      <form className=' w-full  max-w-sm sm:w-1/2 border-red-400' onSubmit={handleSubmit}>
+        <div className='my-2'><label>Name: </label></div>
+        <div>
           <input
-            className='outline-none text-3xl sm:text-4xl font-bold border-b-2 border-gray-200 p-2'
+            required
+            className='block w-full rounded-md border-0 py-1.5 h-15 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6'
            type="text" name='name' id="name" value={recipe.name} onChange={handleChange} />
         </div>
 
-        <div  className='mb-4 w-full'>
-          <label className='m'>Description : </label>
+        <div  className='my-4'><label className='m'>Description : </label></div>
+        <div>
           <textarea 
-            className='w-60 h-12 px-5 mx-5 my-5 rounded-lg'
+            className='block w-full rounded-md border-0 py-1.5 h-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300  focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           type="text" name='description' id='description' value={recipe.description} onChange={handleChange}/>
         </div>
 
-        <div className='inner-create'>
+        <div className='my-4'>
           <label htmlFor="ingredients">Ingredients</label>
+        </div>
+        <div>
           {recipe.ingredients.map((ingredient, index) => (
            <input
-           className='w-60 h-12 px-5 mx-5 my-5 rounded-lg'
+           className='block w-full rounded-md border-0 pb-1.5 h-15 mb-2 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
            key={index}
            type="text"
            name="ingredients"
@@ -224,34 +98,40 @@ const CreateRecipe = () => {
          />
        ))}
        <button 
-        className='bg-blue-500 rounded-lg mx-5 p-1 rounded-lg'
+        className='bg-blue-400 rounded-lg mx-5 p-2 '
        type="button" onClick={handleAddIngredient}>
          Add Ingredient
        </button>
         </div>
 
-        <div className='inner-create'>
+        <div className='my-4'>
           <label>Instructions : </label>
+        </div>
+        <div>
           <textarea  
-            className='w-60 h-12 px-5 mx-5 my-5 rounded-lg'
+            className='block w-full rounded-md border-0 py-1.5 h-25 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           name='instructions' value={recipe.instructions} onChange={handleChange}/>
         </div>
 
-        <div className='inner-create'>
+        <div className='my-4'>
           <label>Image URL : </label>
+        </div> 
+        <div> 
           <input 
-             className='w-60 h-12 px-5 mx-5 my-5 rounded-lg '
+             className='block w-full rounded-md border-0 py-1.5 h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6'
           type="text" name='imageUrl' value={recipe.imageUrl} onChange={handleChange}/>
         </div>
 
-        <div className='inner-create'>
+        <div className='my-4'>
           <label>Cooking Time : </label>
+        </div>
+        <div className='flex justify-center items-center'>
           <input 
-             className='w-60 h-12 px-5 mx-5 my-5 rounded-lg'
+             className='w-10 text-center rounded-md border-0 py-1.5 h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6 my-4'
             type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
-         <button className='bg-blue-500 rounded-lg m-2 p-2 text-xl' type='submit'>Submit</button>   
+         <button className='bg-blue-400 rounded-lg m-2 p-2 text-xl' type='submit'>Create Recipe</button>   
       </form>
     </div>
   )
