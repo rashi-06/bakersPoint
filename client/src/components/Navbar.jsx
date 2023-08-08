@@ -62,17 +62,17 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        {/* <div className='nav-links'>
+        <div className='nav-links ${mobileMenu ? "block" : "hidden"}'>
             <Link to={"/"} className='links sm:hidden md:hidden'>Home</Link>
             <Link to={"/createRecipe"} className='links'>CreateRecipe</Link>
             <Link to={"/savedRecipes"} className='links'>SavedRecipes</Link>
             {!cookies.access_token ? (<Link to={"/login"} className='links'>Login</Link>):(
               <button onClick={logout}>Logout</button>
-            )} */}
+            )} 
 
-        {/* </div> */}
+         </div>
 
-        <div>
+        {/* <div>
             <div
               className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
                 mobileMenu ? "block" : "hidden"}`}>
@@ -90,8 +90,8 @@ const Navbar = () => {
                               <button onClick={logout}>Logout</button>
                             )}
                         </ul>
-                    </div>
-                </div>
+                    </div> */}
+                {/* </div> */}
             {/* </div> */}
     </header>
   )
