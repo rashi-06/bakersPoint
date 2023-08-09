@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -74,9 +74,9 @@
   font-size: larger;
   font-weight: 100;
   /* padding: 2px 5px; */
-}
 
-.button{
+
+/*.button{
   padding: 5px 12px;
   border-radius: 20px;
 }
@@ -84,7 +84,7 @@
   background-color: #1d1e20;
   cursor: pointer;
   color: white;
-  /* padding: 20px; */
+  /* padding: 20px; 
 }
 input{
   font-size: larger;
@@ -102,16 +102,14 @@ label{
   margin: 50px 550px;
 } */
 
- .inner-create{
-  margin: 120px 5px;
+ /* .inner-create{ */
+  /* margin: 120px 5px;
   padding: 120px 20px;
   font-size: larger;
   font-weight: 100;
   list-style: none;
-  border: 2px solid black;
-}
-
-
+  border: 2px solid black; */
+/*  */
 
 
 
@@ -168,7 +166,7 @@ button:hover {
 /* } */
 
 /* .list_items li{ */
-  border: 2px solid black;
+  /* border: 2px solid black;
   margin: 90px 300px;
   padding: 20px 150px;
-/* } */
+} */

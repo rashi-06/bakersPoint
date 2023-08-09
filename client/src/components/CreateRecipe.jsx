@@ -67,6 +67,7 @@ const CreateRecipe = () => {
       <h1 className='text-3xl mb-9 mt-2'>Create Form</h1>
 
       <form className=' w-full  max-w-sm sm:w-1/2 border-red-400' onSubmit={handleSubmit}>
+        
         <div className='my-2'><label>Name: </label></div>
         <div>
           <input
@@ -83,7 +84,7 @@ const CreateRecipe = () => {
         </div>
 
         <div className='my-4'>
-          <label htmlFor="ingredients">Ingredients</label>
+          <label htmlFor="ingredients">Ingredients :</label>
         </div>
         <div>
           {recipe.ingredients.map((ingredient, index) => (
@@ -97,11 +98,15 @@ const CreateRecipe = () => {
            onChange={(event) => handleIngredientChange(event, index)}
          />
        ))}
-       <button 
-        className='bg-yellow-300 rounded-lg mx-5 p-2 '
-       type="button" onClick={handleAddIngredient}>
-         Add Ingredient
-       </button>
+       
+       <div className='flex justify-center items-center'>
+          <button 
+          className='bg-yellow-300 rounded-lg mx-5 p-2 itmes-center'
+          type="button" onClick={handleAddIngredient}>
+          Add Ingredient
+          </button>
+       </div>
+       
         </div>
 
         <div className='my-4'>
@@ -125,13 +130,20 @@ const CreateRecipe = () => {
         <div className='my-4'>
           <label>Cooking Time : </label>
         </div>
-        <div className='flex justify-center items-center'>
+        <div className='flex justify-center item-center'>
           <input 
              className='w-1/2 text-center rounded-md border-0 p-3 text-xl h-15 text-gray-900 ring-1 ring-gray-300 focus:ring-2 focus:ring-insetsm:text-sm sm:leading-6 my-4'
             type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
-         <button className='bg-yellow-300 rounded-lg m-2 p-2 text-xl' type='submit'>Create Recipe</button>   
+        <div className='flex justify-center items-center'>
+           <button className='bg-yellow-300 rounded-lg m-2 p-2 text-xl items-center' 
+            type='submit'>
+              Create Recipe
+           </button>  
+        </div>
+
+        
       </form>
     </div>
   )
