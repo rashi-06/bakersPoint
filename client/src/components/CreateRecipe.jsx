@@ -63,8 +63,8 @@ const CreateRecipe = () => {
   };
 
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center bg-red-100'>
-      <h1 className='text-3xl'>Create Form</h1>
+    <div className='w-full h-full flex flex-col justify-center items-center bg-white-500'>
+      <h1 className='text-3xl mb-9 mt-2'>Create Form</h1>
 
       <form className=' w-full  max-w-sm sm:w-1/2 border-red-400' onSubmit={handleSubmit}>
         <div className='my-2'><label>Name: </label></div>
@@ -98,7 +98,7 @@ const CreateRecipe = () => {
          />
        ))}
        <button 
-        className='bg-blue-400 rounded-lg mx-5 p-2 '
+        className='bg-yellow-300 rounded-lg mx-5 p-2 '
        type="button" onClick={handleAddIngredient}>
          Add Ingredient
        </button>
@@ -131,7 +131,7 @@ const CreateRecipe = () => {
             type="number" name='cookingTime' id='cookingTime' value={recipe.cookingTime} onChange={handleChange}/>
         </div>
 
-         <button className='bg-blue-400 rounded-lg m-2 p-2 text-xl' type='submit'>Create Recipe</button>   
+         <button className='bg-yellow-300 rounded-lg m-2 p-2 text-xl' type='submit'>Create Recipe</button>   
       </form>
     </div>
   )
