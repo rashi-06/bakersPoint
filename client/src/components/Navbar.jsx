@@ -78,16 +78,16 @@ const Navbar = () => {
           }`}
           >
             <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:font-bold">
                   <Link to={"/"}>Home</Link>
                 </li>
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:font-bold">
                   <Link to={"/createRecipe"}>Create Recipe</Link>
                 </li>
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:font-bold">
                   <Link to={"/savedRecipes"}>Saved Recipes</Link>
                 </li>
-                <li className="text-gray-600 hover:text-blue-600">
+                <li className="text-gray-600 hover:font-bold">
                  {!cookies.access_token ? (<Link to={"/login"} className='links'>Login</Link>):(
                    <button onClick={logout}>Logout</button>
                  )}

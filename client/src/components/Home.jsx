@@ -59,42 +59,72 @@ const Home = () => {
 
 
   return (
-    <div className='container'>
-       <h1>Recipes</h1>
-      <ul className='list_items'>
-        {recipes.reverse().map((recipe) => (
-          <li className='list_ele' key={recipe._id}>
-            <div >
-              <h2>{recipe.name}</h2>
-              <button
-                onClick={() => saveRecipe(recipe._id)}
-                disabled={isRecipeSaved(recipe._id)}
-              >
-                {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
-              </button>
-            </div>
-            {/* {recipe.instructions.map((r)=>(
-              <ul>
-                <li>{r.instructions}</li>
-              </ul>
-            ))}   */}
-            <div>
-              <ul>
-              {recipe.ingredients.map((element) =>
-                <li className='all-recipes'>{element}</li>
-              )}
-              </ul>
-            </div>
+    
+    // <div className='container'>
+    //    <h1>Recipes</h1>
+    //   <ul className='list_items'>
+    //     {recipes.reverse().map((recipe) => (
+    //       <li className='list_ele' key={recipe._id}>
+    //         <div >
+    //           <h2>{recipe.name}</h2>
+    //           <button
+    //             onClick={() => saveRecipe(recipe._id)}
+    //             disabled={isRecipeSaved(recipe._id)}
+    //           >
+    //             {isRecipeSaved(recipe._id) ? "Saved" : "Save"}
+    //           </button>
+    //         </div>
+    //         {/* {recipe.instructions.map((r)=>(
+    //           <ul>
+    //             <li>{r.instructions}</li>
+    //           </ul>
+    //         ))}   */}
+    //         <div>
+    //           <ul>
+    //           {recipe.ingredients.map((element) =>
+    //             <li className='all-recipes'>{element}</li>
+    //           )}
+    //           </ul>
+    //         </div>
             
-            <div className="instructions">
-              <p>{recipe.instructions}</p>
-            </div>
-            <img src={recipe.imageUrl} alt={recipe.name} />
-            <p>Cooking Time: {recipe.cookingTime} minutes</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    //         <div className="instructions">
+    //           <p>{recipe.instructions}</p>
+    //         </div>
+    //         <img src={recipe.imageUrl} alt={recipe.name} />
+    //         <p>Cooking Time: {recipe.cookingTime} minutes</p>
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
+    
+    <div className='w-full h-full flex justify-center items-center'>
+      <h1>Recipes</h1>
+       
+           {recipes.reverse().map((recipe) => (
+             <div className="w-full rounded-lg shadow-md lg:max-w-sm flex-shrink" >
+             <img
+                 className="object-cover w-full h-48"
+                 src={recipe.imageUrl}
+                 alt="image"
+             />
+             <div className="p-4">
+                 <h4 className="text-xl font-semibold tracking-tight text-blue-600">
+                     React Tailwind Card with Image
+                 </h4>
+                 <p className="mb-2 leading-normal">
+                     react tailwind css card with image It is a long established
+                     fact that a reader will be distracted by the readable
+                     content.
+                 </p>
+                 <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
+                     Read more
+                 </button>
+             </div>
+         </div>
+          ))}
+          </div>
+   
+   
   )
 }
 

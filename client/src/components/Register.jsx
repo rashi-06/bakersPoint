@@ -10,7 +10,7 @@ const Register = () => {
     const [userName, setUserName] = useState("");
     const [password , setPassword] = useState("");
     const [cpass ,setCpass] = useState("");
-    const [passwordsMatch , setPasswordsMatch] = useState(true);
+    const [passwordsMatch , setPasswordsMatch] = useState(false);
 
     const handleConfirmPasswordChange = (event) => {
         setCpass(event.target.value);
@@ -24,23 +24,10 @@ const Register = () => {
         e.preventDefault();
 
 
-        // {!passwordsMatch ? alert("Password doesn't matched") : 
-        //     try {
-        //         const res = await axios.post("http://localhost:2000/auth/register" , {
-        //             userName,
-        //             password
-        //         })
-           
-        //         navigate("/");
+         
 
-        //     } 
-        //     catch (error) {
-        //         alert(error);
-        //     } 
-        // }
-
-        // if(cpass == password)alert("Password doesn't matched") 
-        // else{
+        if(!passwordsMatch)alert("Password doesn't matched") 
+        else{
             try {
                 const res = await axios.post("http://localhost:2000/auth/register" , {
                     userName,
@@ -52,7 +39,7 @@ const Register = () => {
             } catch (error) {
                 alert(error);
             } 
-        // }
+        }
          
     }
 
