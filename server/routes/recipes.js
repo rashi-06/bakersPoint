@@ -66,7 +66,7 @@ router.get("/savedRecipes/ids/:userID" , async(req,res) =>{
         const user = await UserModel.findById(req.params.userID);
         res.status(201).json({savedRecipes : user?.savedRecipes});
     } catch (error) {
-      res.status(500).json(err);
+      res.status(500).json(error);
     }
 })
 
